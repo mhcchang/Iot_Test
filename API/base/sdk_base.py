@@ -11,7 +11,7 @@ class SdkBase(object):
 			# log_colors = log_colors_config
 			current=os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 			self.log = log_txt(loggername=__name__).log_init()
-			version=args.get('version')
+			version=args.get('version','4.2.3')
 			if version == '3.3' :
 				path=''
 			elif version == '4.1':

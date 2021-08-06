@@ -6,5 +6,6 @@ param:
 other
 '''
 import os,sys
+import allure
 current=os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
 sys.path.append(current)

@@ -17,3 +17,5 @@ class Test_Open_Stream():
 		interface = eval('SdkBase().{}(args={})'.format("IOT_CloseLiveStream", deviceId))
 	def teardown(self):
 		unregister_iot()
+if __name__ == '__main__':
+    pytest.main(['-s','test_open_stream.py'])

@@ -1,12 +1,19 @@
 #coding:utf-8
 '''
 author:
-function: 添加设备
+function: 设备操作相关
 param:
 other
 '''
 from API.base.sdk_base import *
 from API.base.structure import *
+import time
+#log
+from util.log import *
+log = log_txt(loggername=__name__).log_init()
+
+
+#添加设备
 class IOT_AddDevice(SdkBase):
 	def __init__(self,args=None):
 		super().__init__(args)
@@ -105,9 +112,76 @@ class IOT_AddDevice(SdkBase):
 	def result(self, code, res=None):
 		return super().result(code, res)
 
-# param = {"addr": "10.171.129.18", "port": 34567, "type": 2, "model": "xm_fun_01", "vendor": 52, "chan_no": 0,
-# 	   "chan_num": 0, "password": "admin123", "username": "admin", "video_port": 554, "device_code": "",
-# 	   "platform_id": "", "chan_profile": 0,'ip':'10.122.48.196','_port':"8500","_user":"admin","_pwd":"admin","version":"4.2.3"}
-# start=IOT_AddDevice(param).start_server()
-# resutl=IOT_AddDevice(param).run()
-# print(resutl)
+
+#获取设备列表
+
+class IOT_GetDeviceList(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(args)
+        self.user_data = (args.get('user_data',None))
+        CALLBACK = CFUNCTYPE(c_int, POINTER(struct_IotDeviceInfo),c_int,c_char_p)
+        self.system_define_cb = CALLBACK(self.system_define_cb_func)
+        self.status = False
+
+    def run(self):
+        self.SdkCdll.IOT_GetDeviceList.argtype = (c_int,c_char_p)
+        self.SdkCdll.IOT_GetDeviceList.restype = c_int
+        code = self.SdkCdll.IOT_GetDeviceList(self.system_define_cb,self.user_data)
+
+        if code == 0:
+            self.system_define_wait_func()
+        else:
+            return self.result(code)
+
+        return self.result(code, {'result': self.res})
+
+    def result(self, code, res=None):
+        return super().result(code, res)
+
+    def system_define_wait_func(self):
+        timestamp = int(time.time()) + 25
+        while 1:
+            time.sleep(0.2)
+            if self.status or int(time.time()) >= timestamp:
+                break
+
+    def system_define_cb_func(self, dev_list, dev_num, user_data):
+        return self.real_cb_func(dev_list,dev_num,user_data)
+
+    def real_cb_func(self, dev_list,dev_num, user_data):
+        key_list = [ x[0] for x in struct_IotDeviceInfo._fields_ ]
+        res = []
+        try:
+            for i in range(dev_num):
+                tmp = {}
+                for key in key_list:
+                    d = self.format_res(dev_list[i].__getattribute__(key))
+                    if not isinstance(d, dict):
+                        tmp[key] = d
+                    else:
+                        for d_key, d_value in d.items():
+                            tmp[d_key] = d_value
+                res.append(tmp)
+        except Exception as e:
+
+            res = 'No data: {}'.format(str(e))
+
+        self.res = res
+        self.status = True
+        return 0
+
+#删除设备
+class IOT_DeleteDevice(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(args)
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+
+    def run(self):
+        self.SdkCdll.IOT_DeleteDevice.argtype = (c_char_p)
+        self.SdkCdll.IOT_DeleteDevice.restype = c_int
+        code = self.SdkCdll.IOT_DeleteDevice(self.dev_id)
+        return self.result(code)
+
+    def result(self, code, res=None):
+        return super().result(code,res)
+

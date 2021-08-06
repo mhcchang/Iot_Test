@@ -6,7 +6,7 @@ param:
 other
 '''
 #SDk
-SDK_IP = "10.172.198.43"
+SDK_IP = "10.122.94.184"
 SDK_PORT = "8500"
 SDK_USER = "admin"
 SDK_PSD = "admin"
