@@ -1036,6 +1036,8 @@ class struct_IotAlarmOutConfig(Structure):
 
 
 class struct_IotDeviceAlarmInfo(Structure):
+    _pack_ = 1
+
     _fields_ = [
 
         ('timestamp', c_int64),
@@ -1048,7 +1050,19 @@ class struct_IotDeviceAlarmInfo(Structure):
 
         ('alarm_type', c_uint16),
 
-        ('res', (c_uint8 * 28))
+        ('alarm_state', c_uint8),
+
+        ('is_channel', c_uint8),
+
+        ('capture_num', c_uint32),
+
+        ('res', (c_uint8 * 28)),
+
+        ('chan_id', (c_char * 24)),
+
+        ('alarm_params', (c_char * 24))
+
+
 
     ]
 

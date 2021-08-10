@@ -104,5 +104,7 @@ class Test_Device():
 		log.info(result)
 		assert result['code'] == 0
 
+
+
 if __name__ == '__main__':
-	pytest.main(["-v","test_device_add.py"])
+	pytest.main(["-s","test_device_add.py"])
