@@ -405,3 +405,268 @@ class IOT_GetDeviceInfo(SdkBase):
 
 	def result(self, code, res=None):
 		return super().result(code, res)
+
+
+# 开视频流
+class IOT_OpenLiveStream(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
+		self.user_data = (args.get('user_data', None))
+		self.handle = c_int()
+		CALLBACK = CFUNCTYPE(c_int, c_int, POINTER(struct_IotVideoFrameInfo), POINTER(c_uint8), c_int, c_char_p)
+		self.system_define_cb = CALLBACK(self.system_define_cb_func)
+
+	def run(self):
+		self.SdkCdll.IOT_OpenLiveStream.argtype = (c_char_p, c_int, c_char_p, POINTER(c_int))
+		self.SdkCdll.IOT_OpenLiveStream.restype = c_int
+		code = self.SdkCdll.IOT_OpenLiveStream(self.dev_id, self.system_define_cb, self.user_data, pointer(self.handle))
+		if code == 0:
+			self.system_define_wait_func()
+		else:
+			return self.result(code)
+		return self.result(code, {"handle": self.handle.value})
+
+	def result(self, code, res=None):
+		return super().result(code, res)
+
+	def system_define_wait_func(self):
+		time.sleep(2)
+
+	def system_define_cb_func(self, handle, info, buf, len, user_data):
+		return self.real_cb_func(handle, info, buf, len, user_data)
+
+	def real_cb_func(self, handle, info, buf, len, user_data):
+
+		_tmp = ''
+		_res_list = []
+		# print('>>>>>>')
+
+		_key_list = [x[0] for x in struct_IotVideoFrameInfo._fields_]
+
+		try:
+			for i in range(1):
+				_tmp = {}
+				for _key in _key_list:
+					_val_fixed = self.format_res(info[i].__getattribute__(_key))
+					# _tmp[i].__setattr__(_key,_val_fixed)
+					_tmp.update({_key: _val_fixed})
+				_res_list.append(_tmp)
+		# print(_tmp)
+		except Exception as e:
+			print(str(e))
+			_res_list = ['No data: {}'.format(str(e))]
+
+		# print('<<<<<<')
+		self.res = _res_list
+
+		return 0
+
+
+# 关流
+class IOT_CloseLiveStream(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		self.handle = int(args.get('handle', 0))
+
+	def run(self):
+		self.SdkCdll.IOT_CloseLiveStream.argtype = (c_int)
+		self.SdkCdll.IOT_CloseLiveStream.restype = c_int
+		code = self.SdkCdll.IOT_CloseLiveStream(self.handle)
+		return self.result(code)
+
+	def result(self, code, res=None):
+		return super().result(code, res)
+
+
+# 推流
+class IOT_StartPushStream(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
+		self.stream_type = int(args.get('stream_type', 0))
+		self.stream_way = int(args.get('stream_way', 0))
+		self.profile_type = int(args.get('profile_type', 0))
+		self.dest_addr = (args.get('dest_addr', '')).encode('utf-8')
+		self.ext_info = (args.get('ext_info', '')).encode('utf-8')
+		self.session_id = create_string_buffer(128)
+
+	def run(self):
+		self.SdkCdll.IOT_StartPushStream.argtype = (c_char_p, c_int, c_int, c_int, c_char_p, c_char_p, c_char_p)
+		self.SdkCdll.IOT_StartPushStream.restype = c_int
+		code = self.SdkCdll.IOT_StartPushStream(self.dev_id, self.stream_type, self.stream_way, self.profile_type,
+												self.dest_addr, self.ext_info, self.session_id)
+		return self.result(code, {"session_id": self.session_id.value.decode()})
+
+	def result(self, code, res=None):
+		return super().result(code, res)
+
+
+# 查询推流配置参数信息
+class IOT_QueryPushStreamInfo(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		self.session_id = (args.get('session_id')).encode('utf-8')
+		self.ext_info = (args.get('ext_info', '123')).encode('utf-8')
+		self.info_str = create_string_buffer(2 * 1024)
+		self.info_len = 1024 * 1024 * 10240
+		print("======================", args)
+
+	def run(self):
+		buf_len = c_int()
+		buf_len.value = 10 * 1024
+		self.SdkCdll.IOT_QueryPushStreamInfo.argtype = (c_char_p, c_char_p, POINTER(c_int), c_char_p)
+		code = self.SdkCdll.IOT_QueryPushStreamInfo(self.session_id, self.info_str, pointer(buf_len), self.ext_info, )
+		return self.result(code, {"info_str": self.info_str.value.decode()})
+
+	def result(self, code, res=None):
+		return super().result(code, res)
+
+
+# 开启图片流
+class IOT_OpenPictureStream(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
+		self.user_data = (args.get('user_data', None))
+		self.handle = c_int()
+		CALLBACK = CFUNCTYPE(c_int, c_int, POINTER(struct_IotCapPicturesInfo), c_char_p)
+		self.system_define_cb = CALLBACK(self.system_define_cb_func)
+
+	def run(self):
+
+		self.SdkCdll.IOT_OpenPictureStream.argtype = (c_char_p, c_int, c_char_p, POINTER(c_int))
+		self.SdkCdll.IOT_OpenPictureStream.restype = c_int
+		code = self.SdkCdll.IOT_OpenPictureStream(self.dev_id, self.system_define_cb, self.user_data,
+												  pointer(self.handle))
+		if code == 0:
+			self.system_define_wait_func()
+		else:
+			return self.result(code)
+		return self.result(code, {"handle": self.handle.value})
+
+	def result(self, code, res=None):
+		return super().result(code, res)
+
+	def system_define_wait_func(self):
+		time.sleep(2)
+
+	def system_define_cb_func(self, handle, info, user_data):
+		return self.real_cb_func(handle, info, user_data)
+
+	def real_cb_func(self, handle, info, user_data):
+
+		_tmp = ''
+		_res_list = []
+		# print('>>>>>>')
+
+		_key_list = [x[0] for x in struct_IotCapPicturesInfo._fields_]
+		try:
+			for i in range(1):
+				_tmp = {}
+				for _key in _key_list:
+					_val_fixed = self.format_res(info[i].__getattribute__(_key))
+
+					# _tmp[i].__setattr__(_key,_val_fixed)
+					_tmp.update({_key: _val_fixed})
+				_res_list.append(_tmp)
+		except Exception as e:
+			print(str(e))
+			_res_list = ['No data: {}'.format(str(e))]
+
+		# print('<<<<<<')
+		self.res = _res_list
+
+		return 0
+
+
+# 关闭图片流
+class IOT_ClosePictureStream(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		self.handle = int(args.get('handle', 0))
+
+	def run(self):
+		self.SdkCdll.IOT_ClosePictureStream.argtype = (c_int)
+		self.SdkCdll.IOT_ClosePictureStream.restype = c_int
+		code = self.SdkCdll.IOT_ClosePictureStream(self.handle)
+		return self.result(code)
+
+	def result(self, code, res=None):
+		return super().result(code, res)
+
+
+# 开启设备录像
+class IOT_StartDeviceRecord(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		print(11111)
+		print(args)
+		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
+		self.record_type = int(args.get('record_type', 2))  # 默认磁盘缓存
+		self.period = int(args.get('period', 30))  # 默认30s
+		self.res = (args.get('res', '')).encode('utf-8')
+
+	def run(self):
+		self.SdkCdll.IOT_StartDeviceRecord.argtype = (c_char_p, c_int, c_int, c_char_p)
+		self.SdkCdll.IOT_StartDeviceRecord.restype = c_int
+		code = self.SdkCdll.IOT_StartDeviceRecord(self.dev_id, self.record_type, self.period, self.res)
+		return self.result(code)
+
+	def result(self, code, res=None):
+		return super().result(code, res)
+
+
+# 关闭录像
+class IOT_StopDeviceRecord(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
+		self.record_type = int(args.get('record_type', 2))  # 默认磁盘
+
+	def run(self):
+		self.SdkCdll.IOT_StopDeviceRecord.argtype = (c_char_p, c_int)
+		self.SdkCdll.IOT_StopDeviceRecord.restype = c_int
+		code = self.SdkCdll.IOT_StopDeviceRecord(self.dev_id, self.record_type)
+		return self.result(code)
+
+	def result(self, code, res=None):
+		return super().result(code, res)
+
+
+# 获取录像信息
+class IOT_GetDeviceRecordInfo(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
+		self.record_type = int(args.get('record_type', 2))  # 默认获取磁盘
+		self.period = c_int()
+		self.cfg = create_string_buffer(24)
+
+	def run(self):
+		self.SdkCdll.IOT_GetDeviceRecordInfo.argtype = (c_char_p, c_int, POINTER(c_int), c_char_p)
+		self.SdkCdll.IOT_GetDeviceRecordInfo.restype = c_int
+		code = self.SdkCdll.IOT_GetDeviceRecordInfo(self.dev_id, self.record_type, pointer(self.period), self.cfg)
+		return self.result(code, {"period": self.period.value, "cfg": self.cfg.value.decode()})
+
+	def result(self, code, res=None):
+		return super().result(code, res)
+
+#设置录像信息
+class IOT_SetDeviceRecordInfo(SdkBase):
+	def __init__(self, args=None):
+		super().__init__(args)
+		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
+		self.record_type = int(args.get('record_type', 2))
+		self.period = int(args.get('period', 15))
+		self.cfg = (args.get('cfg', '')).encode('utf-8')
+
+	def run(self):
+		self.SdkCdll.IOT_SetDeviceRecordInfo.argtype = (c_char_p, c_int, c_int, c_char_p)
+		self.SdkCdll.IOT_SetDeviceRecordInfo.restype = c_int
+		code = self.SdkCdll.IOT_SetDeviceRecordInfo(self.dev_id, self.record_type, self.period, self.cfg)
+
+		return self.result(code)
+
+	def result(self, code, res=None):
+		return super().result(code, res)

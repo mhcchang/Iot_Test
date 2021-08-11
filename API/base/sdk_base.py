@@ -2,6 +2,10 @@
 from  ctypes import  *
 import os
 from util.log import *
+import os
+current_path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+print(current_path)
+os.environ['LD_LIBRARY_PATH'] = '''/home/haobingzhong/Study_Test/Iot_Test/version/4.2/'''
 class SdkBase(object):
 		'''
 			初始化sdk接口
@@ -20,7 +24,7 @@ class SdkBase(object):
 				path=''
 			elif version == '4.2.3':
 				path=current+'/version/4.1/libiotcenterclient.so'
-			path = current + '/version/4.1/libiotcenterclient.so'
+			path = current + '/version/4.2/libiotcenterclient.so'
 			SdkCdll=cdll.LoadLibrary(path)
 			self.SdkCdll = SdkCdll
 			self.ip = args.get("ip")

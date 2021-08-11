@@ -98,5 +98,27 @@ ex:
 	2.不能装饰@staticmethod 或者 @classmethod已经装饰过的方法
 	3.装饰器会对原函数的元信息进行更改,比如函数的docstring,__name__,参数列表
 注解:wraps本身也是一个装饰器,他能把函数的元信息拷贝到装饰器函数中使得装饰器函数与原函数有一样的元信息
+ex:
+		import time
+		from  functools import wraps
+		
+		def showtime(func):
+			print("showtime")
+			@wraps(func)
+			def wrapper():
+				start_time = time.time()
+				func()
+				end_time = time.time()
+				print('spend is {}'.format(end_time - start_time))
+		
+			return wrapper
+		@showtime
+		def foo():
+			print('foo')
+			time.sleep(3)
+		def doo():
+			print('doo')
+		print(foo.__name__)
+		print(doo.__name__)
 '''
 
