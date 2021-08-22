@@ -14,6 +14,13 @@ SDK_OTHER =""
 SDK_VERSION="4.2.3"
 ARGS = {"ip":SDK_IP,"_port":SDK_PORT,"_user":SDK_USER,"_pwd":SDK_PSD,"version":"4.2.3"}
 
+#jenkins
+Jenkins_url = 'http://10.122.48.196:8081'
+
+
+
+
+
 #celery
 RADIS = ""
 BACK = ""
@@ -27,3 +34,5 @@ MYSQL_PSD = ""
 MYSQL_PORT = ""
 
 #SSH
+
+#mongodb

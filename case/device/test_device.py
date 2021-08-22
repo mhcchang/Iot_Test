@@ -8,18 +8,20 @@ function:
 param:
 other
 '''
-import pytest
-import os,sys
+import os,sys,time
 import allure
 current=os.path.abspath('../')
 print("path",current)
 sys.path.append(current)
 from util.log import *
 from case.common import *
-from API.Device.device import *
+from API.Device.fore_two_three.device  import  *
 import copy
 dev_id_info = []
-from  json import dumps,loads
+
+
+
+print(os.getenv('LD_LIBRARY_PATH'))
 @allure.title("设备相关")
 class Test_Device():
 	'''IOT_AddDevice接口测试'''
@@ -111,7 +113,7 @@ class Test_Device():
 	@pytest.mark.smoke
 	def test_IOT_GetDeviceStatus(self):
 		result = IOT_GetDeviceInfo(args={'dev_id':dev_id_info[0].get('dev_id','')}).run()
-		allure.attach.file('/home/haobingzhong/Study_Test/Iot_Test/case/device/11.txt', 'name', attachment_type=allure.attachment_type.TEXT)
+		# allure.attach.file('/home/haobingzhong/Study_Test/Iot_Test/case/device/11.txt', 'name', attachment_type=allure.attachment_type.TEXT)
 		assert result['code'] == 0,result
 
 
@@ -152,11 +154,44 @@ class Test_Device():
 	@allure.step('step：查询推流配置参数信息')
 	@pytest.mark.order(7)
 	@pytest.mark.flaky(returns=1)
-	@pytest.mark.skip(reason='接口有问题')
+	@pytest.mark.four_two
+	# @pytest.mark.skip(reason='接口有问题')
 	def test_IOT_QueryPushStreamInfo(self):
 
 		result = IOT_QueryPushStreamInfo(args={'session_id':dev_id_info[0].get('session','')}).run()
 		assert result['code'] == 0,result
+		log.info(result)
+
+
+
+	@allure.title('批量更新推流配置参数信息')
+	@allure.step('step：批量更新推流配置参数信息')
+	@pytest.mark.order(8)
+	@pytest.mark.flaky(returns=1)
+	@pytest.mark.skip(reason='接口有问题')
+	def test_IOT_BatchUpdatePushStreamInfo(self):
+		req_info = '''[{
+			/'session/':,'''+str(dev_id_info[0].get('session',''))+'''
+			/"streamType/": 0,
+			/"profileType/": 0,
+			/"streamWay/": 0,
+			/"dest_addr/": "http://10.235.97.220:8021/",
+			/'faceFullBucket/':"11",
+			/"faceCapBucket/":"11",
+			/"personFullBucket/":"11",
+			/"personCapBucket":"11",
+			/"motorFullBucket/":"11",
+			/"motorCapBucket/":"11",
+			"nonmotorFullBucket":"11",
+			"nonmotorCapBucket":"11"
+
+		}]
+		'''
+		result = IOT_BatchUpdatePushStreamInfo(args={'req_info':req_info}).run()
+		assert result['code'] == 0,result
+		log.info(result)
+
+
 
 
 	@allure.title('开启图片流')
@@ -223,6 +258,25 @@ class Test_Device():
 		assert result['code'] == 0,result
 
 
+	@allure.title('获取关键帧')
+	@allure.step('step:获取关键帧')
+	@pytest.mark.order(14)
+	def	test_IOT_GetKeyFrame(self):
+		time.sleep(3)
+		result = IOT_GetKeyFrame(args={'dev_id':dev_id_info[0].get('dev_id','')}).run()
+		assert result['code'] == 0, result
 
+
+
+
+	@allure.title('批量获取设备状态')
+	@allure.step('step:批量获取设备状态')
+	@pytest.mark.order(15)
+	def	test_IOT_BatchGetDeviceStatus(self):
+		time.sleep(3)
+		result = IOT_BatchGetDeviceStatus(args={'dev_list':[dev_id_info[0].get('dev_id','')]}).run()
+		assert result['code'] == 0, result
+#
 # if __name__ == '__main__':
-	# pytest.main(["-s","."])
+# 	pytest.main(["-s",sys.argv[0] ])
+

@@ -3,9 +3,7 @@ from  ctypes import  *
 import os
 from util.log import *
 import os
-current_path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-print(current_path)
-os.environ['LD_LIBRARY_PATH'] = '''/home/haobingzhong/Study_Test/Iot_Test/version/4.2/'''
+
 class SdkBase(object):
 		'''
 			初始化sdk接口
@@ -13,18 +11,23 @@ class SdkBase(object):
 		def __init__(self,args):
 			#{"ip":"","port":"","user":"","pwd":"","version":"4.2.3"}
 			# log_colors = log_colors_config
+			current_path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+			print(current_path)
+			from config.normal import SDK_VERSION
+			Base_url = '''/version/''' + SDK_VERSION + '/'
+			os.environ['LD_LIBRARY_PATH'] = current_path +Base_url
+
 			current=os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 			self.log = log_txt(loggername=__name__).log_init()
 			version=args.get('version','4.2.3')
 			if version == '3.3' :
 				path=''
 			elif version == '4.1':
-				path=current+'/version/4.1/libiotcenterclient.so'
+				path=current+Base_url + '/libiotcenterclient.so'
 			elif version == '4.2':
 				path=''
 			elif version == '4.2.3':
-				path=current+'/version/4.1/libiotcenterclient.so'
-			path = current + '/version/4.2/libiotcenterclient.so'
+				path=current + Base_url + '/libiotcenterclient.so'
 			SdkCdll=cdll.LoadLibrary(path)
 			self.SdkCdll = SdkCdll
 			self.ip = args.get("ip")
