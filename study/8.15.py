@@ -37,6 +37,7 @@ other
 		isAlivel/is_alive()	#布尔标志，标识这个线程是否还存活
 		isDeamon()			#是否是守护进程
 		setDaemon(deamoic)	#把线程守护标志设定为布尔值，必须要在start()之前调用
+		注意：多个线程的时候，调用start()
 		使用方法：
 			1、直接调用初始化Tread()实例。
 			2、集成threading.Thread
