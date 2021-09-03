@@ -62,6 +62,20 @@ other
 				和多线程消耗时间差不多，但是没有锁的风险
 		3.3 aiohttp
 			asyncio可以实现单线程并发IO操作。如果仅用在客户端，发挥的威力不大。如果把asyncio用在服务器端，例如Web服务器，由于HTTP连接就是IO操作，因此可以用单线程+coroutine实现多用户的高并发支持。
+4、学习sql
+	创建表：
+		CREATE TABLE Student(
+		s_id VARCHAR(20),
+		s_name VARCHAR(20) NOT NULL DEFAULT '',
+		s_birth VARCHAR(20) NOT NULL DEFAULT '',
+		s_sex VARCHAR(10) NOT NULL DEFAULT '',
+		PRIMARY KEY(s_id)
+		)
+	题目：1、查询"01"课程比"02"课程成绩高的学生的信息及课程分数	
+			a.首先查询课程2比课程1的学生。
+			b.再通过学生查询信息。
+		SELECT f.s_name,f.s_sex,f.s_id,f.s_birth,f.s_score  FROM ((SELECT Student.s_id,Student.s_sex,Student.s_birth,Student.s_name,Score.s_score FROM Student LEFT JOIN  Score  on  Student.s_id=Score.s_id WHERE Score.c_id=1 )as f)  LEFT JOIN  ((SELECT Student.s_id,Student.s_sex,Student.s_birth,Student.s_name,Score.s_score FROM Student LEFT JOIN  Score  on  Student.s_id=Score.s_id WHERE Score.c_id=2 )as f1)  ON f.s_score > f1.s_score WHERE f.s_id=f1.s_id 
+	
 '''
 #asyncio
 import  asyncio,threading,time
