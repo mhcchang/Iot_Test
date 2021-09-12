@@ -91,6 +91,7 @@ class User():
 #Nested解决一对多，多对多 fields.Nested(User)
 
 u = User("name","email")
+print(dir(u))
 u_s = UserSchema()
 r = u_s.dump(u)#dump是字典
 print(r,isinstance(r,dict))
