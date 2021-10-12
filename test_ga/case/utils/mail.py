@@ -18,7 +18,7 @@ from jinja2 import Environment, FileSystemLoader
 email_host = "smtp.partner.outlook.cn"
 email_port = 587
 send_user = "haobingzhong@megvii.com"
-password = "201467.h"
+
 username = "郝炳钟" + "<" + send_user + ">"
 user_list = ['haobingzhong@megvii.com', ]
 
