@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="python@sftp://security@10.122.48.196:22/usr/bin/python3.7" />
+        <remote-mappings server-id="python@sshConfig://security@10.122.48.196:22 password/usr/bin/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$/.." remote-root="/home/haobingzhong/Study_Test" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@sftp://haobingzhong@10.122.48.196:22/usr/bin/python3.6">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$/.." remote-root="/home/haobingzhong/Study_Test" />
+            </list>
+          </settings>
+        </remote-mappings>
+      </list>
+    </list>
+  </component>
+</project>

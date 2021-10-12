@@ -1141,3 +1141,11 @@ class struct_IotDeviceCacheInfo(Structure):
     ]
 
 
+class struct_IotCameraModeCapability(Structure):
+    _fields_ = [
+
+        ('num', c_int),
+
+        ('list', (c_int * 32))
+
+    ]

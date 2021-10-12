@@ -1,0 +1,377 @@
+{
+  "interface": "Dispositions",
+  "rules": [
+    {
+      "name": "DispositionListObject",
+      "parent": "Dispositions",
+      "type": "object"
+    },
+    {
+      "name": "DispositionObject",
+      "parent": "DispositionListObject",
+      "type": "array"
+    },
+    {
+      "funcArgs": [
+        33
+      ],
+      "funcType": 6,
+      "name": "DispositionID",
+      "parent": "DispositionObject",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "Title",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        5,
+        true
+      ],
+      "funcType": 17,
+      "name": "DispositionCategory",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "TargetFeature",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "TargetImageURI",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 13,
+      "name": "PriorityLevel",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "ApplicantName",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "ApplicantInfo",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "ApplicantOrg",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        14
+      ],
+      "funcType": 12,
+      "name": "BeginTime",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        14
+      ],
+      "funcType": 12,
+      "name": "EndTime",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        14
+      ],
+      "funcType": 12,
+      "name": "CreatTime",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcType": 0,
+      "name": "CreateTime",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1
+      ],
+      "funcType": 3,
+      "name": "OperateType",
+      "parent": "DispositionObject",
+      "required": "R",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2,
+        9,
+        99
+      ],
+      "funcType": 3,
+      "name": "DispositionStatus",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        9,
+        true
+      ],
+      "funcType": 17,
+      "name": "DispositionRange",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        ";",
+        11,
+        0,
+        20
+      ],
+      "funcType": 16,
+      "name": "TollgateList",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "DispositionArea",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "DeviceList",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "ReceiveAddr",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "ReceiveMobile",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "Reason",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "DispositionRemoveOrg",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        32
+      ],
+      "funcType": 4,
+      "name": "DispositionRemovePerson",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        14
+      ],
+      "funcType": 12,
+      "name": "DispositionRemoveTime",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "DispositionRemoveReason",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "name": "SubImageList",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "object",
+      "reuseRule": "SubImageList"
+    },
+    {
+      "name": "FeatureObject",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "object",
+      "reuseRule": "FeatureInfoObject"
+    },
+    {
+      "name": "ResultImageDeclare",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string",
+      "funcType": 3,
+      "funcArgs": [
+        "",
+        "-1",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "100"
+      ]
+    },
+    {
+      "name": "ResultFeatureDeclare",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "number",
+      "funcType": 3,
+      "funcArgs": [
+        -1,
+        1
+      ]
+    },
+    {
+      "name": "TabID",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "string",
+      "funcArgs": 41,
+      "funcType": 6
+    },
+    {
+      "name": "AlarmSensitivity",
+      "parent": "DispositionObject",
+      "required": "O",
+      "type": "number",
+      "funcType": 3,
+      "funcArgs": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "funcType": 0,
+      "name": "SwitchMoreRetry",
+      "parent": "SubscribeObject",
+      "required": "O",
+      "type": "string"
+    }
+  ],
+  "url": "/VIID/Dispositions"
+}

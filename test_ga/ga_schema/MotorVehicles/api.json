@@ -1,0 +1,829 @@
+{
+  "interface": "MotorVehicleObject",
+  "rules": [
+    {
+      "funcArgs": [
+        48
+      ],
+      "funcType": 6,
+      "name": "MotorVehicleID",
+      "parent": "MotorVehicleObject",
+      "required": "R",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2
+      ],
+      "funcType": 3,
+      "name": "InfoKind",
+      "parent": "MotorVehicleObject",
+      "required": "R",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        41
+      ],
+      "funcType": 6,
+      "name": "SourceID",
+      "parent": "MotorVehicleObject",
+      "required": "R",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        20
+      ],
+      "funcType": 6,
+      "name": "TollgateID",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        20
+      ],
+      "funcType": 11,
+      "name": "DeviceID",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "StorageUrl1",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "StorageUrl2",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "StorageUrl3",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "StorageUrl4",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "StorageUrl5",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        100000
+      ],
+      "funcType": 13,
+      "name": "LeftTopX",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        100000
+      ],
+      "funcType": 13,
+      "name": "LeftTopY",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        100000
+      ],
+      "funcType": 13,
+      "name": "RightBtmX",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        100000
+      ],
+      "funcType": 13,
+      "name": "RightBtmY",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        14
+      ],
+      "funcType": 12,
+      "name": "MarkTime",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        14
+      ],
+      "funcType": 12,
+      "name": "AppearTime",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        14
+      ],
+      "funcType": 12,
+      "name": "DisappearTime",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        32
+      ],
+      "funcType": 13,
+      "name": "LaneNo",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ],
+      "funcType": 15,
+      "name": "HasPlate",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/PlateClassType",
+      "funcType": 8,
+      "name": "PlateClass",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "PlateColor",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        32
+      ],
+      "funcType": 4,
+      "name": "PlateNo",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        32
+      ],
+      "funcType": 4,
+      "name": "PlateNoAttach",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "PlateDescribe",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ],
+      "funcType": 15,
+      "name": "IsDecked",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ],
+      "funcType": 15,
+      "name": "IsAltered",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ],
+      "funcType": 15,
+      "name": "IsCovered",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        300
+      ],
+      "funcType": 2,
+      "name": "Speed",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": "reusedRules/HDirectionType",
+      "funcType": 8,
+      "name": "Direction",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        4
+      ],
+      "funcType": 4,
+      "name": "DrivingStatusCode",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        100
+      ],
+      "funcType": 13,
+      "name": "UsingPropertiesCode",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 4,
+      "name": "VehicleClass",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 10,
+      "name": "VehicleBrand",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        32
+      ],
+      "funcType": 4,
+      "name": "VehicleModel",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        16
+      ],
+      "funcType": 4,
+      "name": "VehicleStyles",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        99999
+      ],
+      "funcType": 13,
+      "name": "VehicleLength",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        9999
+      ],
+      "funcType": 13,
+      "name": "VehicleWidth",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        9999
+      ],
+      "funcType": 13,
+      "name": "VehicleHeight",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "VehicleColor",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "0",
+        "1"
+      ],
+      "funcType": 3,
+      "name": "VehicleColorDepth",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "VehicleHood",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "VehicleTrunk",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "VehicleWheel",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        2
+      ],
+      "funcType": 4,
+      "name": "WheelPrintedPattern",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "VehicleWindow",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "VehicleRoof",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "VehicleDoor",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "SideOfVehicle",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "CarOfVehicle",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "RearviewMirror",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "VehicleChassis",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "VehicleShielding",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3"
+      ],
+      "funcType": 3,
+      "name": "FilmColor",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ],
+      "funcType": 15,
+      "name": "IsModified",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "0",
+        "1",
+        "2"
+      ],
+      "funcType": 3,
+      "name": "HitMarkInfo",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "VehicleBodyDesc",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        ",",
+        3,
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "99"
+      ],
+      "funcType": 16,
+      "name": "VehicleFrontItem",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "DescOfFrontItem",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        ",",
+        3,
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "99"
+      ],
+      "funcType": 16,
+      "name": "VehicleRearItem",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "DescOfRearItem",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        10
+      ],
+      "funcType": 13,
+      "name": "NumOfPassenger",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        14
+      ],
+      "funcType": 12,
+      "name": "PassTime",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "NameOfPassedRoad",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ],
+      "funcType": 15,
+      "name": "IsSuspicious",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1
+      ],
+      "funcType": 3,
+      "name": "Sunvisor",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        1
+      ],
+      "funcType": 3,
+      "name": "SafetyBelt",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        1
+      ],
+      "funcType": 3,
+      "name": "Calling",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 4,
+      "name": "PlateReliability",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "PlateCharReliability",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 4,
+      "name": "BrandReliability",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "reuseRule": "SubImageList",
+      "name": "SubImageList",
+      "parent": "MotorVehicleObject",
+      "required": "R",
+      "type": "object"
+    },
+    {
+      "name": "FeatureList",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "object"
+    },
+    {
+      "name": "FeatureInfo",
+      "parent": "FeatureList",
+      "required": "O",
+      "type": "array",
+      "reuseRule": "FeatureInfoObject"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 4,
+      "name": "NationalityCode",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        41
+      ],
+      "funcType": 11,
+      "name": "TabID",
+      "parent": "MotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    }
+  ]
+}

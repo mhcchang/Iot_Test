@@ -7,7 +7,8 @@ other
 '''
 import os,sys
 
-current=os.path.abspath('../')
+current=os.path.abspath('../../')
+print("path",current)
 sys.path.append(current)
 from API.Device.fore_two_three.device import *
 import allure
@@ -20,7 +21,7 @@ dev_id_info = []
 url_gb = '/home/haobingzhong' + '/gb_lite_linux'
 print(url_gb)
 import json
-
+@allure.title('下级国标测试')
 class Test_GB():
 	@allure.title("添加国标设备")
 	@allure.step("step:添加国标设备")
@@ -119,7 +120,13 @@ class Test_GB():
 	@pytest.mark.order(14)
 	def	test_IOT_GetKeyFrame(self):
 		time.sleep(3)
-		result = IOT_GetKeyFrame(args={'dev_id':dev_id_info[0].get('dev_id','')}).run()
+		args = {'dev_id':dev_id_info[0].get('dev_id','')}
+		result = IOT_GetKeyFrame(args=args).run()
+		with allure.step('step2:清除设备环境'):
+			self.sdk = register_iot()
+			self.sdk.delete_all()
+			time.sleep(2)
+			pass
 		assert result['code'] == 0, result
 #
 # if __name__ == '__main__':

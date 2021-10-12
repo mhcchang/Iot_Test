@@ -9,15 +9,15 @@ from API.base.sdk_base import *
 from API.base.version.fore_two_three.structure import *
 import time
 # log
+from config.normal import *
 from util.log import *
 
 log = log_txt(loggername=__name__).log_init()
 
-
 # 添加设备
 class IOT_AddDevice(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		log.info("1111111111111111")
 		log.info(args)
 		self.dev = (args.get('dev', None))
@@ -123,7 +123,7 @@ class IOT_AddDevice(SdkBase):
 
 class IOT_GetDeviceList(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.user_data = (args.get('user_data', None))
 		CALLBACK = CFUNCTYPE(c_int, POINTER(struct_IotDeviceInfo), c_int, c_char_p)
 		self.system_define_cb = CALLBACK(self.system_define_cb_func)
@@ -180,7 +180,7 @@ class IOT_GetDeviceList(SdkBase):
 # 从IoT系统的服务器中删除设备
 class IOT_DeleteDevice(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 
 	def run(self):
@@ -196,7 +196,7 @@ class IOT_DeleteDevice(SdkBase):
 # 从IoT系统的服务器中删除设备（扩展接口版本2）
 class IOT_DeleteDevice2(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.force_delete = int(args.get('force_delete', 0))
 
@@ -213,7 +213,7 @@ class IOT_DeleteDevice2(SdkBase):
 # 从IoT系统的服务器中删除设备（扩展接口版本3，v4.0新增）
 class IOT_DeleteDevice3(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.force_delete = int(args.get('force_delete', 0))
 		self.delete_channels = int(args.get('delete_channels', 0))
@@ -231,7 +231,7 @@ class IOT_DeleteDevice3(SdkBase):
 # 更新设备
 class IOT_UpdateDevice(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.dev = (args.get('dev', None))
 		self.syn_flag = int(args.get('syn_flag', 0))
@@ -337,7 +337,7 @@ class IOT_UpdateDevice(SdkBase):
 # 设备版本查询
 class IOT_GetDeviceVersion(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.info = struct_IotDeviceVersionInfo()
 
@@ -355,7 +355,7 @@ class IOT_GetDeviceVersion(SdkBase):
 # 获取设备算法信息
 class IOT_GetDeviceAlgorithmInfo(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.info = struct_IotDeviceAlgorithmInfo()
 
@@ -373,7 +373,7 @@ class IOT_GetDeviceAlgorithmInfo(SdkBase):
 # 获取单个设备状态信息
 class IOT_GetDeviceStatus(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.status = struct_IotDeviceStatus()
 
@@ -391,7 +391,7 @@ class IOT_GetDeviceStatus(SdkBase):
 # 获取IoT系统服务器中的单个设备的参数信息
 class IOT_GetDeviceInfo(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.dev = (args.get('dev', None))
 		self.dev = struct_IotDeviceConfig()
@@ -410,7 +410,7 @@ class IOT_GetDeviceInfo(SdkBase):
 # 开视频流
 class IOT_OpenLiveStream(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.user_data = (args.get('user_data', None))
 		self.handle = c_int()
@@ -466,7 +466,7 @@ class IOT_OpenLiveStream(SdkBase):
 # 关流
 class IOT_CloseLiveStream(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.handle = int(args.get('handle', 0))
 
 	def run(self):
@@ -482,7 +482,7 @@ class IOT_CloseLiveStream(SdkBase):
 # 推流
 class IOT_StartPushStream(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.stream_type = int(args.get('stream_type', 0))
 		self.stream_way = int(args.get('stream_way', 0))
@@ -505,7 +505,7 @@ class IOT_StartPushStream(SdkBase):
 # 查询推流配置参数信息
 class IOT_QueryPushStreamInfo(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.session_id = (args.get('session_id')).encode('utf-8')
 		self.ext_info = (args.get('ext_info', '123')).encode('utf-8')
 		self.info_str = create_string_buffer(2 * 1024)
@@ -526,7 +526,7 @@ class IOT_QueryPushStreamInfo(SdkBase):
 # 开启图片流
 class IOT_OpenPictureStream(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.user_data = (args.get('user_data', None))
 		self.handle = c_int()
@@ -582,7 +582,7 @@ class IOT_OpenPictureStream(SdkBase):
 # 开启图片流扩展接口2
 class IOT_OpenPictureStream2(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.syn_flag = int(args.get('syn_flag', 0))
 		self.user_data = (args.get('user_data', None))
@@ -633,7 +633,7 @@ class IOT_OpenPictureStream2(SdkBase):
 # 关闭图片流
 class IOT_ClosePictureStream(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.handle = int(args.get('handle', 0))
 
 	def run(self):
@@ -649,7 +649,7 @@ class IOT_ClosePictureStream(SdkBase):
 # 开启设备录像
 class IOT_StartDeviceRecord(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		print(11111)
 		print(args)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
@@ -670,7 +670,7 @@ class IOT_StartDeviceRecord(SdkBase):
 # 关闭录像
 class IOT_StopDeviceRecord(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.record_type = int(args.get('record_type', 2))  # 默认磁盘
 
@@ -687,7 +687,7 @@ class IOT_StopDeviceRecord(SdkBase):
 # 获取录像信息
 class IOT_GetDeviceRecordInfo(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.record_type = int(args.get('record_type', 2))  # 默认获取磁盘
 		self.period = c_int()
@@ -706,7 +706,7 @@ class IOT_GetDeviceRecordInfo(SdkBase):
 # 设置录像信息
 class IOT_SetDeviceRecordInfo(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.record_type = int(args.get('record_type', 2))
 		self.period = int(args.get('period', 15))
@@ -726,7 +726,7 @@ class IOT_SetDeviceRecordInfo(SdkBase):
 # 批量更新推流配置参数信息
 class IOT_BatchUpdatePushStreamInfo(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		print("-----------------")
 		print(args)
 
@@ -748,7 +748,7 @@ class IOT_BatchUpdatePushStreamInfo(SdkBase):
 # 打开图片流  支持1400
 class IOT_OpenPictureStream4(SdkBase):
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 
 		self.chan_id = (args.get('chan_id', '')).encode('utf-8')
 
@@ -812,7 +812,7 @@ class IOT_GetKeyFrame(SdkBase):
 	'''
 
 	def __init__(self, args=None):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.log.info(args)
 		self.dev_id = (args.get('dev_id', '')).encode('utf-8')
 		self.len = args.get('len', 10 * 1024 * 1024)
@@ -860,7 +860,7 @@ class IOT_BatchGetDeviceStatus(SdkBase):
 	'''
 
 	def __init__(self, args):
-		super().__init__(args)
+		super().__init__(ARGS)
 		self.dev_list = args.get('dev_list')
 		self.dev_num = len(self.dev_list)
 
@@ -886,6 +886,183 @@ class IOT_BatchGetDeviceStatus(SdkBase):
 
 		return res_dict
 
+
+#获取视频参数
+class IOT_GetVideoParam(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(ARGS)
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+        self.profile_type = int(args.get('profile_type',0))
+        self.info = (args.get('info',None))
+        self.info = struct_IotVideoStreamParam()
+
+    def run(self):
+        self.SdkCdll.IOT_GetVideoParam.argtype = (c_char_p,c_int,POINTER(struct_IotVideoStreamParam))
+        self.SdkCdll.IOT_GetVideoParam.restype = c_int
+        code = self.SdkCdll.IOT_GetVideoParam(self.dev_id,self.profile_type, pointer(self.info))
+        info = self.format_res(self.info)
+        info.pop('res', None)
+        return self.result(code, info)
+
+    def result(self, code, res=None):
+        return super().result(code,res)
+
+
+#PTZ预置点设置
+class IOT_PtzPreset(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(ARGS)
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+        self.chan_no = int(args.get('chan_no',0))
+        self.cmd = int(args.get('cmd',0))
+        self.index = int(args.get('index',1))
+        self.param1 = int(args.get('param1',0))
+        self.param2 = int(args.get('param2',0))
+        self.param3 = c_int()
+
+    def run(self):
+        self.SdkCdll.IOT_PtzPreset.argtype = (c_char_p,c_int,c_int,c_int,c_int,c_int,POINTER(c_int))
+        self.SdkCdll.IOT_PtzPreset.restype = c_int
+        code = self.SdkCdll.IOT_PtzPreset(self.dev_id,self.chan_no,self.cmd,self.index,self.param1,self.param2,pointer(self.param3))
+        return self.result(code, {"param3": self.param3.value})
+
+    def result(self, code, res=None):
+        return super().result(code,res)
+#设备云台 镜头控制
+class IOT_PtzControl(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(ARGS)
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+        self.chan_no = int(args.get('chan_no',0))
+        self.ptz_cmd = int(args.get('ptz_cmd',0))
+        self.speed = int(args.get('speed',0))
+        self.stop = int(args.get('stop',0))
+
+    def run(self):
+        self.SdkCdll.IOT_PtzControl.argtype = (c_char_p,c_int,c_int,c_int,c_int)
+        self.SdkCdll.IOT_PtzControl.restype = c_int
+        code = self.SdkCdll.IOT_PtzControl(self.dev_id,self.chan_no,self.ptz_cmd,self.speed,self.stop)
+        return self.result(code)
+
+    def result(self, code, res=None):
+        return super().result(code,res)
+#获取设备分辨率能力集
+class IOT_GetResolutionCap(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(ARGS)
+
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+        self.profile_type = int(args.get('profile_type',0))
+        self.info = (args.get('info', None))
+        self.info = struct_IotResolutionCapability()
+
+    def run(self):
+        self.SdkCdll.IOT_GetResolutionCap.argtype = (c_char_p,c_int,POINTER(struct_IotResolutionCapability))
+        self.SdkCdll.IOT_GetResolutionCap.restype = c_int
+        code = self.SdkCdll.IOT_GetResolutionCap(self.dev_id,self.profile_type,pointer(self.info))
+        info = self.format_res(self.info)
+        # info.pop('list', None)
+        return self.result(code, info)
+
+    def result(self, code, res=None):
+        return super().result(code,res)
+
+#获取设备模式能力集
+class IOT_GetCameraModeCap(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(ARGS)
+
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+        self.info = (args.get('info',None))
+        self.info = struct_IotCameraModeCapability()
+
+    def run(self):
+        self.SdkCdll.IOT_GetCameraModeCap.argtype = (c_char_p,POINTER(struct_IotCameraModeCapability))
+        self.SdkCdll.IOT_GetCameraModeCap.restype = c_int
+        code = self.SdkCdll.IOT_GetCameraModeCap(self.dev_id,pointer(self.info))
+        info = self.format_res(self.info)
+        info.pop('list', None)
+        return self.result(code, info)
+
+    def result(self, code, res=None):
+        return super().result(code,res)
+
+#获取相机模式参数
+class IOT_GetCameraMode(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(ARGS)
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+        self.mode = c_int()
+        self.res = create_string_buffer(24)
+
+    def run(self):
+        self.SdkCdll.IOT_GetCameraMode.argtype = (c_char_p,POINTER(c_int),c_char_p)
+        self.SdkCdll.IOT_GetCameraMode.restype = c_int
+        code = self.SdkCdll.IOT_GetCameraMode(self.dev_id,pointer(self.mode),self.res)
+        return self.result(code,{"mode":self.mode.value,"res":self.res.value.decode()})
+
+    def result(self, code, res=None):
+        return super().result(code, res)
+
+# 设置相机模式参数
+class IOT_SetCameraMode(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(ARGS)
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+        self.mode = int(args.get('mode',0))
+        self.res = (args.get('res', '')).encode('utf-8')
+
+    def run(self):
+        self.SdkCdll.IOT_SetCameraMode.argtype = (c_char_p,c_int,c_char_p)
+        self.SdkCdll.IOT_SetCameraMode.restype = c_int
+        code = self.SdkCdll.IOT_SetCameraMode(self.dev_id,self.mode,self.res)
+        return self.result(code)
+
+    def result(self, code, res=None):
+        return super().result(code,res)
+
+#获取设备报警输入端子配置信息
+class IOT_GetAlarmInConfig(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(ARGS)
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+        self.chan_no = int(args.get('chan_no',0))
+        self.cfg = (args.get('cfg',None))
+        self.cfg = struct_IotAlarmInConfig()
+
+    def run(self):
+        self.SdkCdll.IOT_GetAlarmInConfig.argtype = (c_char_p,c_int,POINTER(struct_IotAlarmInConfig))
+        self.SdkCdll.IOT_GetAlarmInConfig.restype = c_int
+        code = self.SdkCdll.IOT_GetAlarmInConfig(self.dev_id,self.chan_no,pointer(self.cfg))
+        cfg = self.format_res(self.cfg)
+        cfg.pop('res', None)
+        return self.result(code, cfg)
+
+    def result(self, code, res=None):
+        return super().result(code,res)
+
+
+#设置设备报警输入端子配置信息
+class IOT_SetAlarmInConfig(SdkBase):
+    def __init__(self, args=None):
+        super().__init__(ARGS)
+        self.dev_id = (args.get('dev_id','')).encode('utf-8')
+        self.chan_no = int(args.get('chan_no',0))
+        self.cfg = struct_IotAlarmInConfig()
+        self.cfg.alarm_mode = args.get('cfg', {}).get('alarm_mode', 0)
+        self.cfg.enabled = args.get('cfg', {}).get('enabled', 0)
+
+    def run(self):
+
+        self.SdkCdll.IOT_SetAlarmInConfig.argtype = (c_char_p,c_int,POINTER(struct_IotAlarmInConfig))
+        self.SdkCdll.IOT_SetAlarmInConfig.restype = c_int
+        code = self.SdkCdll.IOT_SetAlarmInConfig(self.dev_id, self.chan_no,pointer(self.cfg))
+        cfg = self.format_res(self.cfg)
+        cfg.pop('res', None)
+        return self.result(code, cfg)
+
+    def result(self, code, res=None):
+        return super().result(code,res)
 # from config.normal import *
 # from API.Other.Message_callback import *
 # #

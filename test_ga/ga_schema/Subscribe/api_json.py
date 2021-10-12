@@ -8,7 +8,7 @@ other
 #云图采集接口所需要的的字典
 #动态修改参数
 from test_ga.model.utils.sql_operate import sql_operate as sql
-from  test_ga.ga_schema.Face.fun_type import *
+from  test_ga.ga_schema.utils.fun_type import *
 from test_ga.ga_schema.Subscribe.model import Sub
 from  test_ga.ga_schema.Subscribe.schema import SubscribeListObject as sub
 import json
@@ -25,7 +25,6 @@ class SUB:
 			with open('apes.json','r') as f :
 				ape = json.load(f)
 			for x in ape['rules']:
-				print(x)
 				d = dict()
 				d['name'] = x.get('name',None)
 				d['type'] = x.get('type',None)
@@ -40,7 +39,6 @@ class SUB:
 			pass
 		else:
 			for x in sql.query_all(Sub):
-				print(x)
 				arg = x.name
 				self.__dict__[arg] = (fun_type_se(x))
 

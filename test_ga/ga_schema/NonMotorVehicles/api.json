@@ -1,0 +1,489 @@
+{
+  "interface": "NonMotorVehicleObject",
+  "rules": [
+    {
+      "name": "NonMotorVehicleID",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "R",
+      "funcType": 6,
+      "funcArgs": 48
+    },
+    {
+      "name": "InfoKind",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "R",
+      "funcType": 3,
+      "funcArgs": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "SourceID",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "R",
+      "funcType": 6,
+      "funcArgs": 41
+    },
+    {
+      "name": "DeviceID",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 11,
+      "funcArgs": [
+        0,
+        20
+      ]
+    },
+    {
+      "name": "LeftTopX",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 13,
+      "funcArgs": [
+        0,
+        100000
+      ]
+    },
+    {
+      "name": "LeftTopY",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 13,
+      "funcArgs": [
+        0,
+        100000
+      ]
+    },
+    {
+      "name": "RightBtmX",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 13,
+      "funcArgs": [
+        0,
+        100000
+      ]
+    },
+    {
+      "name": "RightBtmY",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 13,
+      "funcArgs": [
+        0,
+        100000
+      ]
+    },
+    {
+      "name": "MarkTime",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 12,
+      "funcArgs": [
+        0,
+        14
+      ]
+    },
+    {
+      "name": "AppearTime",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 12,
+      "funcArgs": [
+        0,
+        14
+      ]
+    },
+    {
+      "name": "DisappearTime",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 12,
+      "funcArgs": [
+        0,
+        14
+      ]
+    },
+    {
+      "name": "HasPlate",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "R",
+      "funcType": 15,
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "PlateClass",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "R",
+      "funcArgs": "reusedRules/PlateClassType",
+      "funcType": 8
+    },
+    {
+      "name": "PlateColor",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "R",
+      "funcType": 8,
+      "funcArgs": "reusedRules/ColorType"
+    },
+    {
+      "name": "PlateNo",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "R",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        32
+      ]
+    },
+    {
+      "name": "PlateNoAttach",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        32
+      ]
+    },
+    {
+      "name": "PlateDescribe",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "IsDecked",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 15,
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "IsAltered",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 15,
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "IsCovered",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 15,
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "Speed",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 2,
+      "funcArgs": [
+        0,
+        300
+      ]
+    },
+    {
+      "name": "DrivingStatusCode",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        4
+      ]
+    },
+    {
+      "name": "UsingPropertiesCode",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 13,
+      "funcArgs": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "VehicleBrand",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 10,
+      "funcArgs": [
+        0,
+        3
+      ]
+    },
+    {
+      "name": "VehicleType",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "VehicleLength",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 13,
+      "funcArgs": [
+        0,
+        99999
+      ]
+    },
+    {
+      "name": "VehicleWidth",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 13,
+      "funcArgs": [
+        0,
+        9999
+      ]
+    },
+    {
+      "name": "VehicleHeight",
+      "type": "number",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 13,
+      "funcArgs": [
+        0,
+        9999
+      ]
+    },
+    {
+      "name": "VehicleColor",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "R",
+      "funcType": 8,
+      "funcArgs": "reusedRules/ColorType"
+    },
+    {
+      "name": "VehicleHood",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "VehicleTrunk",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "VehicleWheel",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "WheelPrintedPattern",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        2
+      ]
+    },
+    {
+      "name": "VehicleWindow",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "VehicleRoof",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "VehicleDoor",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "SideOfVehicle",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "CarOfVehicle",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "RearviewMirror",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "VehicleChassis",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "VehicleShielding",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "FilmColor",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 3,
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "name": "IsModified",
+      "type": "string",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "funcType": 15,
+      "funcArgs": [
+        "",
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "SubImageList",
+      "type": "object",
+      "parent": "NonMotorVehicleObject",
+      "required": "R",
+      "reuseRule": "SubImageList"
+    },
+    {
+      "funcArgs": [
+        0,
+        41
+      ],
+      "funcType": 11,
+      "name": "TabID",
+      "parent": "NonMotorVehicleObject",
+      "required": "O",
+      "type": "string"
+    }
+  ]
+}

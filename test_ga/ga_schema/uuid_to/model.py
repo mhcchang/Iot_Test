@@ -14,6 +14,9 @@ from test_ga.model.utils.Colume_Type import *
 
 # 记录每次操作web的业务类型及uuid
 class Uuid_to(Base_model):
+	'''
+	other:接收端 测试是否通过
+	'''
 	__tablename__ = 'uuid_to'
 	name = Column(String(255))
 	uuid = Column(String(255))

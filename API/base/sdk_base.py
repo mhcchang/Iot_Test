@@ -3,6 +3,7 @@ from  ctypes import  *
 import os
 from util.log import *
 import os
+import allure
 
 class SdkBase(object):
 		'''
@@ -141,10 +142,14 @@ class SdkBase(object):
 					data.update(union_data)
 			return data
 		def result(self, code, res):
+			allure.attach("返回code", "{0}".format(code))
+			allure.attach("返回data", "{0}".format(res))
+			allure.attach("返回msg", "{0}".format( self.get_error_msg(code)))
 			res_dict = {
 				"code": code,
 				"data": res,
 				"msg": self.get_error_msg(code) if code else "success"
 			}
+
 			return res_dict
 # SdkBase({"ip":"10.172.198.43","_port":"8500","_user":"admin","_pwd":"admin","version":"4.2.3"}).start_server()

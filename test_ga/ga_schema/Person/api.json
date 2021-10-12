@@ -1,0 +1,1000 @@
+{
+  "interface": "PersonObject",
+  "rules": [
+    {
+      "funcArgs": [
+        48
+      ],
+      "funcType": 6,
+      "name": "PersonID",
+      "parent": "PersonObject",
+      "required": "R",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2
+      ],
+      "funcType": 3,
+      "name": "InfoKind",
+      "parent": "PersonObject",
+      "required": "R",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        41
+      ],
+      "funcType": 6,
+      "name": "SourceID",
+      "parent": "PersonObject",
+      "required": "R",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        20
+      ],
+      "funcType": 11,
+      "name": "DeviceID",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        100000
+      ],
+      "funcType": 13,
+      "name": "LeftTopX",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        100000
+      ],
+      "funcType": 13,
+      "name": "LeftTopY",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        100000
+      ],
+      "funcType": 13,
+      "name": "RightBtmX",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        100000
+      ],
+      "funcType": 13,
+      "name": "RightBtmY",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        14
+      ],
+      "funcType": 12,
+      "name": "LocationMarkTime",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        14
+      ],
+      "funcType": 12,
+      "name": "PersonAppearTime",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        14
+      ],
+      "funcType": 12,
+      "name": "PersonDisAppearTime",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "111",
+        "114",
+        "123",
+        "414"
+      ],
+      "funcType": 3,
+      "name": "IDType",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "IDNumber",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "Name",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "UsedName",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        64
+      ],
+      "funcType": 4,
+      "name": "Alias",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/GenderCodeType",
+      "funcType": 8,
+      "name": "GenderCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        120
+      ],
+      "funcType": 13,
+      "name": "AgeUpLimit",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        120
+      ],
+      "funcType": 13,
+      "name": "AgeLowerLimit",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": "reusedRules/EthicCodeType",
+      "funcType": 8,
+      "name": "EthicCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 4,
+      "name": "NationalityCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        12
+      ],
+      "funcType": 4,
+      "name": "NativeCityCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        12
+      ],
+      "funcType": 4,
+      "name": "ResidenceAdminDivision",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        6
+      ],
+      "funcType": 4,
+      "name": "ChineseAccentCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "PersonOrg",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 4,
+      "name": "JobCategory",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        100
+      ],
+      "funcType": 13,
+      "name": "AccompanyNumber",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        250
+      ],
+      "funcType": 13,
+      "name": "HeightUpLimit",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        250
+      ],
+      "funcType": 13,
+      "name": "HeightLowerLimit",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "BodyType",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        32
+      ],
+      "funcType": 4,
+      "name": "SkinColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/HairStyleType",
+      "funcType": 8,
+      "name": "HairStyle",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "HairColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "99"
+      ],
+      "funcType": 3,
+      "name": "Gesture",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "0",
+        "1",
+        "2"
+      ],
+      "funcType": 3,
+      "name": "Status",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        4
+      ],
+      "funcType": 4,
+      "name": "FaceStyle",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        40
+      ],
+      "funcType": 4,
+      "name": "FacialFeature",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        200
+      ],
+      "funcType": 4,
+      "name": "PhysicalFeature",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        70
+      ],
+      "funcType": 4,
+      "name": "BodyFeature",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "99"
+      ],
+      "funcType": 3,
+      "name": "HabitualMovement",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "99"
+      ],
+      "funcType": 3,
+      "name": "Behavior",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "BehaviorDescription",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        ";",
+        3,
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "99"
+      ],
+      "funcType": 16,
+      "name": "Appendant",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        256
+      ],
+      "funcType": 4,
+      "name": "AppendantDescription",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "UmbrellaColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "RespiratorColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        2
+      ],
+      "funcType": 4,
+      "name": "CapStyle",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "CapColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        2
+      ],
+      "funcType": 4,
+      "name": "GlassStyle",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "GlassColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "ScarfColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "99"
+      ],
+      "funcType": 3,
+      "name": "BagStyle",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "BagColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "99"
+      ],
+      "funcType": 3,
+      "name": "CoatStyle",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3"
+      ],
+      "funcType": 3,
+      "name": "CoatLength",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "CoatColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "99"
+      ],
+      "funcType": 3,
+      "name": "TrousersStyle",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "TrousersColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2"
+      ],
+      "funcType": 3,
+      "name": "TrousersLen",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "99"
+      ],
+      "funcType": 3,
+      "name": "ShoesStyle",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/ColorType",
+      "funcType": 8,
+      "name": "ShoesColor",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2
+      ],
+      "funcType": 3,
+      "name": "IsDriver",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2
+      ],
+      "funcType": 3,
+      "name": "IsForeigner",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": "reusedRules/enPassportType",
+      "funcType": 8,
+      "name": "PassportType",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        2
+      ],
+      "funcType": 4,
+      "name": "ImmigrantTypeCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2
+      ],
+      "funcType": 3,
+      "name": "IsSuspectedTerrorist",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        19
+      ],
+      "funcType": 4,
+      "name": "SuspectedTerroristNumber",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2
+      ],
+      "funcType": 3,
+      "name": "IsCriminalInvolved",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        2
+      ],
+      "funcType": 4,
+      "name": "CriminalInvolvedSpecilisationCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        7
+      ],
+      "funcType": 4,
+      "name": "BodySpeciallMark",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        4
+      ],
+      "funcType": 4,
+      "name": "CrimeMethod",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 4,
+      "name": "CrimeCharacterCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        23
+      ],
+      "funcType": 4,
+      "name": "EscapedCriminalNumber",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2
+      ],
+      "funcType": 3,
+      "name": "IsDetainees",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        9
+      ],
+      "funcType": 4,
+      "name": "DetentionHouseCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": "reusedRules/DetaineesIdentityType",
+      "funcType": 8,
+      "name": "DetaineesIdentity",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        2
+      ],
+      "funcType": 4,
+      "name": "DetaineesSpecialIdentity",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        2
+      ],
+      "funcType": 4,
+      "name": "MemberTypeCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2
+      ],
+      "funcType": 3,
+      "name": "IsVictim",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "funcArgs": [
+        0,
+        3
+      ],
+      "funcType": 4,
+      "name": "VictimType",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        200
+      ],
+      "funcType": 4,
+      "name": "InjuredDegree",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        2
+      ],
+      "funcType": 4,
+      "name": "CorpseConditionCode",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    },
+    {
+      "funcArgs": [
+        0,
+        1,
+        2
+      ],
+      "funcType": 3,
+      "name": "IsSuspiciousPerson",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "number"
+    },
+    {
+      "reuseRule": "SubImageList",
+      "name": "SubImageList",
+      "parent": "PersonObject",
+      "required": "R",
+      "type": "object"
+    },
+    {
+      "funcArgs": [
+        0,
+        41
+      ],
+      "funcType": 11,
+      "name": "TabID",
+      "parent": "PersonObject",
+      "required": "O",
+      "type": "string"
+    }
+  ]
+}

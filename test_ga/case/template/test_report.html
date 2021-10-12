@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--        <title>{{ title }}</title>-->
+        <meta charset="utf-8" />
+        <style>
+            body {
+                font: normal 14px Consolas, Verdana, sans-serif;
+            }
+
+            table {
+                border-collapse: collapse;
+                table-layout:fixed;
+            }
+
+            table, th, td {
+                border: 1px solid;
+            }
+            #note{
+                font: normal 12px Consolas, Verdana, sans-serif;
+                font-style: italic;
+            }
+
+        </style>
+</head>
+
+<body>
+    <div class="shadow-lg p-3 mb-5 bg-white rounded"><!--<h2>{{ title }}</h2></div>-->
+        <p>Hello，ALL</p>
+        <p><b>测试主机：</b>{{ server_ip }}</p>
+        <p><b>测试状态：</b>执行完成</p>
+        <p><b>测试结果详情：</b><a href="{{ report_url }}">链接</a></p>
+        <br/>
+            <div class="container-fluid">
+                <br/>
+                <hr/>
+<!--                <p>云图测试</p>-->
+         </div>
+    </div>
+</body>
+</html>

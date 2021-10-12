@@ -1,0 +1,266 @@
+
+{
+  "interface": "APEObject",
+  "rules": [
+    {
+      "name": "ApeID",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 6,
+      "funcArgs": 20
+    },
+    {
+      "name": "Name",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "Model",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "IPAddr",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 16,
+      "funcArgs": [
+        ".",
+        17,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "IPV6Addr",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "Port",
+      "type": "number",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 13,
+      "funcArgs": [
+        1,
+        65535
+      ]
+    },
+    {
+      "name": "Longitude",
+      "type": "number",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 14,
+      "funcArgs": [
+        -180,
+        180,
+        6
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "number",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 14,
+      "funcArgs": [
+        -90,
+        90,
+        6
+      ]
+    },
+    {
+      "name": "PlaceCode",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 6,
+      "funcArgs": 6
+    },
+    {
+      "name": "Place",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        256
+      ]
+    },
+    {
+      "name": "OrgCode",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        12
+      ]
+    },
+    {
+      "name": "CapDirection",
+      "type": "number",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 3,
+      "funcArgs": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "MonitorDirection",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 8,
+      "funcArgs": "reusedRules/HDirectionType"
+    },
+    {
+      "name": "MonitorAreaDesc",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        256
+      ]
+    },
+    {
+      "name": "IsOnline",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 8,
+      "funcArgs": "reusedRules/StatusType"
+    },
+    {
+      "name": "OwnerApsID",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 11,
+      "funcArgs": [
+        0,
+        20
+      ]
+    },
+    {
+      "name": "UserId",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "Password",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    },
+    {
+      "name": "TollgateID",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 11,
+      "funcArgs": [
+        0,
+        20
+      ]
+    },
+    {
+      "name": "FunctionType",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "R",
+      "funcType": 16,
+      "funcArgs": [
+        "/",
+        3,
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "99"
+      ]
+    },
+    {
+      "name": "PositionType",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 16,
+      "funcArgs": [
+        "/",
+        3,
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "96",
+        "97",
+        "98",
+        "99"
+      ]
+    },
+    {
+      "name": "Protocol",
+      "type": "string",
+      "parent": "APEObject",
+      "required": "O",
+      "funcType": 4,
+      "funcArgs": [
+        0,
+        64
+      ]
+    }
+  ]
+}

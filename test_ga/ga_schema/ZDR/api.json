@@ -1,0 +1,121 @@
+{
+  "describe": "ZDR库特征值",
+  "interface": "personfeatures",
+  "url": "/VIID/Person/Feature",
+  "rules": [
+    {
+      "name": "data",
+      "parent": "",
+      "required": "R",
+      "type": "array"
+    },
+    {
+      "name": "RXSFYQID",
+      "parent": "data",
+      "required": "R",
+      "type": "string",
+      "funcType": 8,
+      "funcArgs": "reusedRules/RXSFYQID",
+      "describe": "人像算法引擎id"
+    },
+    {
+      "name": "RKLX",
+      "parent": "data",
+      "required": "R",
+      "type": "number",
+      "funcType": 8,
+      "funcArgs": "reusedRules/RKLX"
+    },
+    {
+      "name": "GZJB",
+      "parent": "data",
+      "required": "O",
+      "type": "string",
+      "funcType": 3,
+      "funcArgs": [
+        "",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "describe": "关注级别，1.严重关注；2.重点关注；3.一般关注4.无须关注"
+    },
+    {
+      "name": "ZDRID",
+      "parent": "data",
+      "required": "R",
+      "type": "string",
+      "describe": "重点人唯一标识",
+      "funcType": 8,
+      "funcArgs": "reusedRules/ZDRID"
+    },
+    {
+      "name": "TZSJ",
+      "parent": "data",
+      "required": "R",
+      "type": "string",
+      "funcArgs": [
+        16,
+        999999
+      ],
+      "funcType": 4,
+      "describe": "特征数据，Base64格式"
+    },
+    {
+      "name": "ZHXGSJ",
+      "parent": "data",
+      "required": "R",
+      "type": "string",
+      "funcType": 12,
+      "funcArgs": [
+        0,
+        14
+      ],
+      "describe": "最后修改时间yyyyMMddHHmmss"
+    },
+    {
+      "name": "TZZL",
+      "parent": "data",
+      "required": "O",
+      "type": "string",
+      "describe": "特征质量"
+    },
+    {
+      "name": "SFZXBS",
+      "parent": "data",
+      "required": "O",
+      "type": "number",
+      "funcType": 3,
+      "funcArgs": [
+        0,
+        1
+      ],
+      "describe": "是否注销标识，0未注销，1注销"
+    },
+    {
+      "name": "ZXSJ",
+      "parent": "data",
+      "required": "O",
+      "type": "string",
+      "funcType": 12,
+      "funcArgs": [
+        0,
+        14
+      ],
+      "describe": "yyyyMMddHHmmss注销时间"
+    },
+    {
+      "name": "TABID",
+      "parent": "data",
+      "required": "O",
+      "type": "string",
+      "describe": "库ID,表示全国重点人员库",
+      "funcArgs": [
+        0,
+        41
+      ],
+      "funcType": 11
+    }
+  ]
+}
